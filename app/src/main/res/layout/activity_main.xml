@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/colorPrimaryDark">
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/puntajes" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,8 +23,8 @@
             android:layout_weight="1" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="293dp"
+            android:layout_width="48dp"
+            android:layout_height="502dp"
             android:layout_weight="1"
             android:orientation="vertical"
             tools:layout_editor_absoluteX="16dp"
@@ -27,7 +32,13 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="53dp" />
+                android:layout_height="119dp" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/kyklos_color" />
 
             <Button
                 android:id="@+id/btn_jugar"

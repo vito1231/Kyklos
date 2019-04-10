@@ -1,11 +1,15 @@
 package com.example.administrator.kyklos;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,28 +24,32 @@ public class Jugar extends Activity implements View.OnClickListener {
     private Button btn_basurero2;
     private Button btn_basurero3;
     private Button btn_basurero4;
+    private ArrayList<Integer> listaImagenes;
     private int indice;
     private int puntaje;
     private ArrayList<Integer> listaNumeros;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugar);
-        listaNumeros = generarNumeros();
+        cargarImagenes();
+        generarNumeros();
 
+        txt_puntaje = (TextView) findViewById(R.id.txt_puntaje);
+        //txt_desecho = (TextView) findViewById(R.id.txt_desecho);
+        btn_basurero1 = (Button)findViewById(R.id.button6);
+        btn_basurero2 = (Button)findViewById(R.id.button7);
+        btn_basurero3 = (Button)findViewById(R.id.button8);
+        btn_basurero4 = (Button)findViewById(R.id.button9);
+        image = (ImageView)findViewById(R.id.imageView8);
 
-        txt_puntaje = (TextView)findViewById(R.id.txt_puntaje);
-        txt_desecho = (TextView)findViewById(R.id.txt_desecho);
-        btn_basurero1 = (Button)findViewById(R.id.button3);
-        btn_basurero2 = (Button)findViewById(R.id.button4);
-        btn_basurero3 = (Button)findViewById(R.id.button5);
-        btn_basurero4 = (Button)findViewById(R.id.button6);
-        String texto = String.valueOf(listaNumeros.get(indice));
-        txt_desecho.setText("Desecho:" + texto);
-        txt = (TextView)findViewById(R.id.textView4);
-        String res = String.valueOf((listaNumeros.get(indice)%4)+1);
-        txt.setText("Tocar:" + res);
+        //String texto = String.valueOf(listaNumeros.get(indice));
+        //txt_desecho.setText("Desecho:" + texto);
+        //txt = (TextView)findViewById(R.id.textView4);
+        //String res = String.valueOf((listaNumeros.get(indice)%4)+1);
+        //txt.setText("Tocar:" + res);
         String texto1 = String.valueOf(puntaje);
         txt_puntaje.setText("Puntaje:" + texto1);
 
@@ -92,20 +100,43 @@ public class Jugar extends Activity implements View.OnClickListener {
             String texto1 = String.valueOf(puntaje);
             txt_puntaje.setText("Puntaje:" + texto1);
         }
+        /*
         String texto2 = String.valueOf(listaNumeros.get(indice));
         txt_desecho.setText("Desecho:" + texto2);
         String res = String.valueOf((listaNumeros.get(indice)%4)+1);
         txt.setText("Tocar:" + res);
+        */
+        int imgagen = listaImagenes.get(listaNumeros.get(indice));
+        image.setImageResource(imgagen);
 
     }
 
-    public ArrayList<Integer> generarNumeros(){
-        ArrayList<Integer> listaNumeros = new ArrayList<>();
-        for (int i=0; i<100; i++) {
+    public void generarNumeros(){
+        listaNumeros = new ArrayList<>();
+        for (int i=0; i<listaImagenes.size(); i++) {
             listaNumeros.add(i);
         }
         Collections.shuffle(listaNumeros);
-        return listaNumeros;
+
     }
+
+    public void cargarImagenes(){
+        listaImagenes = new ArrayList<>();
+        listaImagenes.add(R.drawable.banano);
+        listaImagenes.add(R.drawable.disco);
+        listaImagenes.add(R.drawable.lata);
+        listaImagenes.add(R.drawable.botella);
+
+        listaImagenes.add(R.drawable.manzana);
+        listaImagenes.add(R.drawable.bombillo);
+        listaImagenes.add(R.drawable.sardina);
+        listaImagenes.add(R.drawable.bolsa);
+
+        listaImagenes.add(R.drawable.huevo);
+        listaImagenes.add(R.drawable.celular);
+        listaImagenes.add(R.drawable.gancho);
+        listaImagenes.add(R.drawable.galon);
+    }
+
 
 }

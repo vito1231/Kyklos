@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Jugar"
-    android:background="@color/colorPrimaryDark">
+    tools:context=".Jugar">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/puntajes" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,66 +23,70 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
-            <Button
                 android:id="@+id/button6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="180dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:background="@drawable/amarillo"
+                android:text="Organico"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="90dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:background="@drawable/azul"
+                android:text="Electronico"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="90dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:background="@drawable/rojo"
+                android:text="Aluminio"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="90dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:background="@drawable/verde"
+                android:text="Plastico"
+                android:textSize="14sp" />
 
         </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="48dp" />
 
         <TextView
             android:id="@+id/txt_puntaje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:fontFamily="monospace"
+            android:text="PUNTAJE"
             android:textAlignment="center"
-            android:textSize="30sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="99dp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/txt_desecho"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_height="149dp"
+            android:layout_weight="1"
+            android:fontFamily="monospace"
+            android:text="Desecho"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/textView4"
+        <ImageView
+            android:id="@+id/imageView8"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:src="@drawable/banano"
+            tools:layout_editor_absoluteY="519dp" />
 
     </LinearLayout>
 
